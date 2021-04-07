@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     EditText editText;
-    TextView textView, textView3, textView5, valueOfPounds;
+    TextView textView, textView3, textView5, valueOfPounds, textView2, valueOfTonne;
     Button button;
 
     @Override
@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         textView3 = findViewById(R.id.textView3);
         textView5 = findViewById(R.id.valueOfPounds);
         valueOfPounds = findViewById(R.id.valueOfPounds);
+        textView2 = findViewById(R.id.valueOfTonne);
+        valueOfTonne = findViewById(R.id.valueOfTonne);
 
 
         editText = findViewById(R.id.editTextNumber);
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 ConvertFromKiloToPound ();
+                ConvertFromKiloToTonne ();
 
 
             }
@@ -41,6 +44,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void ConvertFromKiloToTonne() {
+
+        String valueEnteredinKILO = editText.getText().toString();
+
+        double Kilo = Double.parseDouble(valueEnteredinKILO);
+
+        double tonne = Kilo / 1000;
+
+        textView2.setText("" + tonne);
+    }
 
 
     private void ConvertFromKiloToPound() {
